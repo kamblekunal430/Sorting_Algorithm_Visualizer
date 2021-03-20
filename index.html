@@ -7,12 +7,16 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="style.css" />
+
+    <script async defer src="script.js"></script>
   </head>
   <body>
     <nav>
       <div class="heading"><h1>Sorting Algorithm Visualizer</h1></div>
       <div class="Buttons">
-        <button class="btn-style" id="new_arr">New Array</button>
+        <button class="btn-style" id="new_arr" onclick="createArray()">
+          New Array
+        </button>
         <button class="btn-style" id="selection_sort">Selection Sort</button>
         <button class="btn-style" id="bubble_sort">Bubble Sort</button>
         <button class="btn-style" id="insertion_sort">Insertion Sort</button>
@@ -20,6 +24,8 @@
         <button class="btn-style" id="merge_sort">Merge Sort</button>
       </div>
     </nav>
-    <main>Visual Area</main>
+    <main class="visual_area">
+      <div class="Bars" id="bars"></div>
+    </main>
   </body>
 </html>

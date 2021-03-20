@@ -46,3 +46,29 @@ button {
   color: white;
   border-radius: 5px;
 }
+
+.visual_area {
+  width: 100%;
+  height: 70vh;
+  padding: 10px;
+}
+
+.Bars {
+  border: solid black 1px;
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.barStyle {
+  width: 25px;
+  background-color: lightseagreen;
+  border: solid white 1px;
+  margin: 1px;
+  font-weight: bolder;
+  text-align: center;
+}
