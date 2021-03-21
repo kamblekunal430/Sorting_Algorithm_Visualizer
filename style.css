@@ -111,3 +111,35 @@ button:hover {
     width: 5px;
   }
 }
+
+footer {
+  width: 100%;
+  height: auto;
+  padding: 25px;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-around;
+  align-items: center;
+}
+
+.social {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+a i {
+  padding: 10px;
+}
+
+.icon {
+  font-size: x-large;
+  color: white;
+}
+
+.creator {
+  font-size: x-large;
+}

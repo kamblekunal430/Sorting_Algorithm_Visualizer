@@ -2,8 +2,10 @@ var randomArray = randomArrayGenerator();
 
 const btn = document.querySelectorAll("button");
 
+// generate array and bars when page is refreshed
 newArray();
 
+//fuction to generate random array
 function randomArrayGenerator() {
   var randomArray = [];
   for (let i = 0; i < 30; i++) {
@@ -19,6 +21,7 @@ function newArray() {
   createBars(randomArray);
 }
 
+//fuction to generate bars of random array
 function createBars(randomArray) {
   for (let i = 0; i < 30; i++) {
     var arr_bar = document.createElement("div");
@@ -29,6 +32,7 @@ function createBars(randomArray) {
   }
 }
 
+// function to change the height of bars
 function changeHeight(ele1, ele2) {
   const style1 = window.getComputedStyle(ele1);
   const style2 = window.getComputedStyle(ele2);
@@ -40,14 +44,17 @@ function changeHeight(ele1, ele2) {
   ele2.style.height = transform1;
 }
 
+//function to change the color of bars
 function changeColor(ele, colorname) {
   ele.style.backgroundColor = colorname;
 }
 
+// function to add delay to view animation
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+// function to enable and disable buttons
 function enableDisableBTN(status) {
   var i = 0;
   btn.forEach(() => {
@@ -56,6 +63,7 @@ function enableDisableBTN(status) {
   });
 }
 
+// function to perform bubble sort on array
 async function bubbleSort() {
   enableDisableBTN(true);
   await delay(250);
@@ -89,6 +97,7 @@ async function bubbleSort() {
   enableDisableBTN(false);
 }
 
+// function to perform selection sort on array
 async function selectionSort() {
   enableDisableBTN(true);
   await delay(250);
