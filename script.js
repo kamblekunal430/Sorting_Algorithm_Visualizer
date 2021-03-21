@@ -1,5 +1,7 @@
 var randomArray = randomArrayGenerator();
 
+const btn = document.querySelectorAll("button");
+
 newArray();
 
 function randomArrayGenerator() {
@@ -46,7 +48,16 @@ function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+function enableDisableBTN(status) {
+  var i = 0;
+  btn.forEach(() => {
+    btn[i].disabled = status;
+    i++;
+  });
+}
+
 async function bubbleSort() {
+  enableDisableBTN(true);
   await delay(250);
   for (i = 0; i < 30; i++) {
     for (j = 0; j < 30 - i - 1; j++) {
@@ -74,9 +85,12 @@ async function bubbleSort() {
   changeColor(ele2, "green");
   changeColor(ele1, "green");
   console.log(randomArray);
+
+  enableDisableBTN(false);
 }
 
 async function selectionSort() {
+  enableDisableBTN(true);
   await delay(250);
   for (i = 0; i < 30 - 1; i++) {
     var ele1 = document.getElementById(`div${i}`);
@@ -104,4 +118,6 @@ async function selectionSort() {
   changeColor(ele2, "green");
   changeColor(ele1, "green");
   console.log(randomArray);
+
+  enableDisableBTN(false);
 }

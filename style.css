@@ -48,10 +48,18 @@ button {
   margin: 2px;
 }
 
+button:hover {
+  background-color: lavender;
+  color: black;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
 .visual_area {
   width: 100%;
   height: 400px;
   padding: 10px;
+  background-color: lightgray;
 }
 
 .Bars {
@@ -67,7 +75,8 @@ button {
 .barStyle {
   width: 25px;
   background-color: lightseagreen;
-  border: solid white 1px;
+  border: solid black 1px;
+
   margin: 1px;
   font-weight: bolder;
   text-align: center;
