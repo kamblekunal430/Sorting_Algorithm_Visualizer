@@ -61,7 +61,7 @@ button {
   width: 100%;
   display: inline-flex;
   flex-wrap: wrap-reverse;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .barStyle {
@@ -73,32 +73,32 @@ button {
   text-align: center;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1200px) {
   .barStyle {
     width: 20px;
   }
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 900px) {
   .barStyle {
     width: 15px;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 650px) {
   .barStyle {
     width: 10px;
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 500px) {
   .barStyle {
-    width: 5px;
+    width: 8px;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 350px) {
   .barStyle {
-    width: 3px;
+    width: 5px;
   }
 }
