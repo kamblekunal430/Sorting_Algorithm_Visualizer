@@ -45,6 +45,7 @@ button {
   background-color: black;
   color: white;
   border-radius: 5px;
+  margin: 2px;
 }
 
 .visual_area {
@@ -59,9 +60,8 @@ button {
   height: 100%;
   width: 100%;
   display: inline-flex;
-  flex-wrap: wrap-reverse;
-  justify-content: center;
-  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .barStyle {
@@ -71,4 +71,34 @@ button {
   margin: 1px;
   font-weight: bolder;
   text-align: center;
+}
+
+@media (max-width: 1400px) {
+  .barStyle {
+    width: 20px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .barStyle {
+    width: 15px;
+  }
+}
+
+@media (max-width: 900px) {
+  .barStyle {
+    width: 10px;
+  }
+}
+
+@media (max-width: 650px) {
+  .barStyle {
+    width: 5px;
+  }
+}
+
+@media (max-width: 400px) {
+  .barStyle {
+    width: 3px;
+  }
 }
