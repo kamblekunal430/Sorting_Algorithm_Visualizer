@@ -103,7 +103,7 @@ async function selectionSort() {
   await delay(250);
   for (i = 0; i < 30 - 1; i++) {
     var ele1 = document.getElementById(`div${i}`);
-    changeColor(ele1, "red");
+    changeColor(ele1, "yellow");
     for (j = i + 1; j < 30; j++) {
       var ele2 = document.getElementById(`div${j}`);
 
@@ -127,6 +127,48 @@ async function selectionSort() {
   changeColor(ele2, "green");
   changeColor(ele1, "green");
   console.log(randomArray);
+
+  enableDisableBTN(false);
+}
+
+async function insertionSort() {
+  enableDisableBTN(true);
+  await delay(150);
+  var key;
+  for (i = 1; i < 30; i++) {
+    key = randomArray[i];
+    j = i - 1;
+
+    var ele1 = document.getElementById(`div${i}`);
+    var ele2 = document.getElementById(`div${j}`);
+    var ele3 = document.getElementById(`div${j + 1}`);
+
+    while (j >= 0 && randomArray[j] > key) {
+      ele2 = document.getElementById(`div${j}`);
+      ele3 = document.getElementById(`div${j + 1}`);
+      //  changeColor(ele2, "red");
+      changeColor(ele3, "yellow");
+      await delay(300);
+
+      changeHeight(ele2, ele3);
+      changeColor(ele2, "green");
+
+      changeColor(ele3, "green");
+      await delay(250);
+      randomArray[j + 1] = randomArray[j];
+      j -= 1;
+    }
+
+    ele3 = document.getElementById(`div${j + 1}`);
+
+    await delay(250);
+    randomArray[j + 1] = key;
+    //  changeColor(ele1, "yellow");
+
+    changeColor(ele2, "green");
+
+    changeColor(ele3, "green");
+  }
 
   enableDisableBTN(false);
 }
