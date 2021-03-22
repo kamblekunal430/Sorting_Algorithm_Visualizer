@@ -146,22 +146,21 @@ async function insertionSort() {
     while (j >= 0 && randomArray[j] > key) {
       ele2 = document.getElementById(`div${j}`);
       ele3 = document.getElementById(`div${j + 1}`);
-      //  changeColor(ele2, "red");
+      changeColor(ele2, "red");
       changeColor(ele3, "yellow");
-      await delay(300);
+      await delay(500);
 
       changeHeight(ele2, ele3);
       changeColor(ele2, "green");
-
       changeColor(ele3, "green");
-      await delay(250);
+      await delay(150);
       randomArray[j + 1] = randomArray[j];
       j -= 1;
     }
 
     ele3 = document.getElementById(`div${j + 1}`);
 
-    await delay(250);
+    await delay(150);
     randomArray[j + 1] = key;
     //  changeColor(ele1, "yellow");
 
