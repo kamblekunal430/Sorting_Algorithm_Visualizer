@@ -63,6 +63,12 @@ function enableDisableBTN(status) {
   });
 }
 
+function swap(i, j) {
+  var temp = randomArray[i];
+  randomArray[i] = randomArray[j];
+  randomArray[j] = temp;
+}
+
 // function to perform bubble sort on array
 async function bubbleSort() {
   enableDisableBTN(true);
@@ -113,9 +119,7 @@ async function selectionSort() {
       if (randomArray[i] >= randomArray[j]) {
         changeHeight(ele1, ele2);
         await delay(250);
-        let temp = randomArray[i];
-        randomArray[i] = randomArray[j];
-        randomArray[j] = temp;
+        swap(i, j);
       }
 
       changeColor(ele2, "lightseagreen");
@@ -146,7 +150,7 @@ async function insertionSort() {
     while (j >= 0 && randomArray[j] > key) {
       ele2 = document.getElementById(`div${j}`);
       ele3 = document.getElementById(`div${j + 1}`);
-      changeColor(ele2, "red");
+      changeColor(ele2, "rgba(0,255,0,0.7)");
       changeColor(ele3, "yellow");
       await delay(500);
 
@@ -170,4 +174,49 @@ async function insertionSort() {
   }
 
   enableDisableBTN(false);
+}
+
+function qSort(items, left, right) {
+  var index;
+  if (items.length > 1) {
+    index = partition(items, left, right); //index returned from partition
+    if (left < index - 1) {
+      //more elements on the left side of the pivot
+      qSort(items, left, index - 1);
+    }
+    if (index < right) {
+      //more elements on the right side of the pivot
+      qSort(items, index, right);
+    }
+  }
+  return items;
+}
+
+function partition(items, left, right) {
+  var pivot = items[Math.floor((right + left) / 2)], //middle element
+    i = left, //left pointer
+    j = right; //right pointer
+  while (i <= j) {
+    while (items[i] < pivot) {
+      i++;
+    }
+    while (items[j] > pivot) {
+      j--;
+    }
+    if (i <= j) {
+      swap(i, j); //swap two elements
+      i++;
+      j--;
+    }
+  }
+  return i;
+}
+
+function quickSort() {
+  var start = 0;
+  var end = 29;
+
+  console.log(randomArray);
+  qSort(randomArray, start, end);
+  console.log(randomArray);
 }
