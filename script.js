@@ -213,10 +213,15 @@ function partition(items, left, right) {
 }
 
 function quickSort() {
+  alert("Quick sort is yet to implement please try other algorithm");
   var start = 0;
   var end = 29;
 
   console.log(randomArray);
   qSort(randomArray, start, end);
   console.log(randomArray);
+}
+
+function mergeSort() {
+  alert("Merge sort is yet to implement please try other algorithm");
 }
