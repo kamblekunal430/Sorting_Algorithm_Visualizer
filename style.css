@@ -83,36 +83,6 @@ button:hover {
   text-align: center;
 }
 
-@media (max-width: 1200px) {
-  .barStyle {
-    width: 20px;
-  }
-}
-
-@media (max-width: 900px) {
-  .barStyle {
-    width: 15px;
-  }
-}
-
-@media (max-width: 650px) {
-  .barStyle {
-    width: 10px;
-  }
-}
-
-@media (max-width: 500px) {
-  .barStyle {
-    width: 8px;
-  }
-}
-
-@media (max-width: 350px) {
-  .barStyle {
-    width: 5px;
-  }
-}
-
 footer {
   width: 100%;
   height: auto;
@@ -142,6 +112,47 @@ a i {
   color: white;
 }
 
+.icon:hover {
+  font-size: 30px;
+  color: white;
+}
+
 .creator {
   font-size: x-large;
+}
+
+@media (max-width: 1200px) {
+  .barStyle {
+    width: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .barStyle {
+    width: 15px;
+  }
+}
+
+@media (max-width: 650px) {
+  .barStyle {
+    width: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .barStyle {
+    width: 8px;
+  }
+  .heading {
+    font-size: larger;
+  }
+  button {
+    font-size: small;
+  }
+}
+
+@media (max-width: 360px) {
+  .barStyle {
+    width: 6px;
+  }
 }
