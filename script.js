@@ -77,6 +77,7 @@ async function bubbleSort() {
     for (j = 0; j < 30 - i - 1; j++) {
       var ele1 = document.getElementById(`div${j}`);
       var ele2 = document.getElementById(`div${j + 1}`);
+      //console.log(ele1, ele2);
       changeColor(ele1, "red");
       changeColor(ele2, "red");
       await delay(150);
@@ -176,31 +177,38 @@ async function insertionSort() {
   enableDisableBTN(false);
 }
 
-function qSort(items, left, right) {
+function qSort(left, right) {
   var index;
-  if (items.length > 1) {
-    index = partition(items, left, right); //index returned from partition
+  if (randomArray.length > 1) {
+    index = partition(left, right); //index returned from partition
     if (left < index - 1) {
       //more elements on the left side of the pivot
-      qSort(items, left, index - 1);
+      qSort(left, index - 1);
     }
     if (index < right) {
       //more elements on the right side of the pivot
-      qSort(items, index, right);
+      qSort(index, right);
     }
   }
-  return items;
+  return randomArray;
 }
 
-function partition(items, left, right) {
-  var pivot = items[Math.floor((right + left) / 2)], //middle element
-    i = left, //left pointer
-    j = right; //right pointer
+function partition(left, right) {
+  let mid = Math.floor((right + left) / 2);
+  var pivot = randomArray[mid]; //middle element
+  console.log("pivot", pivot, left, right);
+  var ele1 = document.getElementById(`div${pivot}`);
+  console.log(ele1);
+  //left pointer
+  i = left;
+  //right pointer
+  j = right;
+
   while (i <= j) {
-    while (items[i] < pivot) {
+    while (randomArray[i] < pivot) {
       i++;
     }
-    while (items[j] > pivot) {
+    while (randomArray[j] > pivot) {
       j--;
     }
     if (i <= j) {
@@ -214,11 +222,11 @@ function partition(items, left, right) {
 
 function quickSort() {
   alert("Quick sort is yet to implement please try other algorithm");
-  var start = 0;
-  var end = 29;
 
   console.log(randomArray);
-  qSort(randomArray, start, end);
+
+  qSort(0, randomArray.length - 1);
+
   console.log(randomArray);
 }
 
