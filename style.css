@@ -85,7 +85,7 @@ button:hover {
 
 footer {
   width: 100%;
-  height: auto;
+  height: 100px;
   padding: 25px;
   margin-top: 20px;
   border-top: solid white 1px;

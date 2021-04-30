@@ -177,23 +177,23 @@ async function insertionSort() {
   enableDisableBTN(false);
 }
 
-function qSort(left, right) {
+async function qSort(left, right) {
   var index;
   if (randomArray.length > 1) {
-    index = partition(left, right); //index returned from partition
+    index = await partition(left, right); //index returned from partition
     if (left < index - 1) {
       //more elements on the left side of the pivot
-      qSort(left, index - 1);
+      await qSort(left, index - 1);
     }
     if (index < right) {
       //more elements on the right side of the pivot
-      qSort(index, right);
+      await qSort(index, right);
     }
   }
   return randomArray;
 }
 
-function partition(left, right) {
+async function partition(left, right) {
   let mid = Math.floor((right + left) / 2);
   var pivot = randomArray[mid]; //middle element
   console.log("pivot", pivot, left, right);
