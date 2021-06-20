@@ -68,3 +68,10 @@ function swap(i, j) {
   randomArray[i] = randomArray[j];
   randomArray[j] = temp;
 }
+
+function colorRange(s, e, col) {
+  for (i = s; i <= e; i++) {
+    var ele = document.getElementById(`div${i}`);
+    changeColor(ele, col);
+  }
+}
