@@ -1,7 +1,7 @@
 // function to perform bubble sort on array
 async function bubbleSort() {
   enableDisableBTN(true);
-  await delay(250);
+  await delay(150);
   for (i = 0; i < 30; i++) {
     for (j = 0; j < 30 - i - 1; j++) {
       var ele1 = document.getElementById(`div${j}`);
@@ -13,7 +13,7 @@ async function bubbleSort() {
 
       if (randomArray[j] >= randomArray[j + 1]) {
         changeHeight(ele1, ele2);
-        await delay(250);
+        await delay(150);
         let temp = randomArray[j];
         randomArray[j] = randomArray[j + 1];
         randomArray[j + 1] = temp;
@@ -21,7 +21,7 @@ async function bubbleSort() {
 
       changeColor(ele1, "lightseagreen");
       changeColor(ele2, "lightseagreen");
-      await delay(250);
+      await delay(150);
     }
 
     changeColor(ele2, "green");
@@ -36,7 +36,7 @@ async function bubbleSort() {
 // function to perform selection sort on array
 async function selectionSort() {
   enableDisableBTN(true);
-  await delay(250);
+  await delay(150);
   for (i = 0; i < 30 - 1; i++) {
     var ele1 = document.getElementById(`div${i}`);
     changeColor(ele1, "yellow");
@@ -48,12 +48,12 @@ async function selectionSort() {
 
       if (randomArray[i] >= randomArray[j]) {
         changeHeight(ele1, ele2);
-        await delay(250);
+        await delay(150);
         swap(i, j);
       }
 
       changeColor(ele2, "lightseagreen");
-      await delay(250);
+      await delay(150);
     }
 
     changeColor(ele1, "green");
@@ -82,7 +82,7 @@ async function insertionSort() {
       ele3 = document.getElementById(`div${j + 1}`);
       changeColor(ele2, "rgba(0,255,0,0.7)");
       changeColor(ele3, "yellow");
-      await delay(500);
+      await delay(250);
 
       changeHeight(ele2, ele3);
       changeColor(ele2, "green");
